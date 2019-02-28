@@ -1,0 +1,93 @@
+/* General Demo Style */
+
+
+/* 默认格式为隐藏，才可以使用触发显示 */
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+.show {
+    display: block!important;
+}
+
+/*弹窗固定于浏览器*/
+.modal {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+/*弹窗水平居中*/
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+/*当浏览器视窗大于768px时，模态弹出窗的宽度为600px实现*/
+@media (min-width: 768px) {
+  .modal-dialog {
+	width: auto;
+    margin: 100px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px transparent;
+  }
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+/*蒙版*/
+/*弹窗弹出时为 <body> 元素添加 .modal-open类，从而覆盖页面默认的滚动行为，
+并且还会自动生成一个 .modal-backdrop 元素用于提供一个可点击的区域，点击此区域就即可关闭模态框*/
+.modal-open {
+    overflow: hidden;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: transparent;
+}
+/*给其添加了一个过渡动画:从fade到in，把opacity值从0变成了0.5*/
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+/*动画效果*/
+/*弹窗的动画内容是从-25%的top值位置到top:0的位置*/
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate3d(0, -25%, 0);
+       -o-transform: translate3d(0, -25%, 0);
+          transform: translate3d(0, -25%, 0);
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+
+

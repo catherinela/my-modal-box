@@ -1,0 +1,6 @@
+关于Modernizr：
+Modernizr 是一个 javascript 库，检查你的游览器是否支持 CSS3 或者 HTML5 的特性而自动添加一些类名（class）到 <html> 并 替换掉原来的 .no-js（简单来说，Modernizr 就是一个CSS3/HTML5 的测试器，你需要测试什么，这可以到它的官方网站配置，选择自己需要测试的元素）。
+
+还有让你的游览器支持 HTML5 中的新的标签，例如：<nav>, <header>, <footer> 和 <figure>
+
+Modernizr 官方网站：http://modernizr.com/
